@@ -10,12 +10,11 @@ int main()
     {
         int variant;
         int num = 1;
-        double X, X1, X2, Y;
+        double X1, X2, Y;
             unsigned char N;
                 const double power = 5;
                     double cos(double (X));
                     double sqrt(double (X));
-                    double exp(double (X));
                     double pow(double(X),  double(power));
                     double delta = (X2 - X1) / (N-1);
         printf("Hello\n");
