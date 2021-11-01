@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <math.h>
-#include <unistd.h>
-#include <string.h>
-#include <windows.h>
 #include <conio.h>
 int main()
     {
@@ -45,8 +41,6 @@ int main()
                             delta = (X2 - X1)/(N-1);
                         } while(X1 >= X2 ) ;
                     printf("\nThe step of changing x: %.2lf", delta);
-                    for(X1;X1<=X2;X1+delta)
-                        {
                             Y = 2*cos(X1) + sqrt(pow(X1, power));
                             system("cls");
                             printf("\t    X1=%lf       X2=%lf       N=%i\n", X1, X2, N);
@@ -58,9 +52,9 @@ int main()
                             printf("\t+-----+-------------------+--------------------+\n");
                             for(num=2; num<=N; num++)
                                 {
-                                    Y = 2*cos(X) + sqrt(pow(X, power));
                                     X1 = X1 + delta;
                                     delta = (X2 - X1)/(N-1);
+                                    Y = 2*cos(X1) + sqrt(pow(X1, power));
                                     printf("\t|%5d|%19.2lf|%20.2lf|\n", num, X1, Y);
                                     printf("\t+-----+-------------------+--------------------+\n");
                                     if (num%8 == 1)
@@ -114,8 +108,6 @@ int main()
                                         }
                                 }
                         }
-
               }
-
     return 0;
   }
