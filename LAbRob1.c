@@ -41,30 +41,29 @@ int main()
                             delta = (X2 - X1)/(N-1);
                         } while(X1 >= X2 ) ;
                     printf("\nThe step of changing x: %.2lf", delta);
+                    Y = 2*cos(X1) + sqrt(pow(X1, power));
+                    system("cls");
+                    printf("\t    X1=%lf       X2=%lf       N=%i\n", X1, X2, N);
+                    printf("\t************************************************\n");
+                    printf("\t*  N  *        X         *         F(X)        *\n");
+                    printf("\t************************************************\n");
+                    printf("\t+-----+-------------------+--------------------+\n");
+                    printf("\t|%5d|%19.2lf|%20.2lf|\n", num, X1, Y);
+                    printf("\t+-----+-------------------+--------------------+\n");
+                    for(num=2; num<=N; num++)
+                        {
+                            X1 = X1 + delta;
+                            delta = (X2 - X1)/(N-1);
                             Y = 2*cos(X1) + sqrt(pow(X1, power));
-                            system("cls");
-                            printf("\t    X1=%lf       X2=%lf       N=%i\n", X1, X2, N);
-                            printf("\t************************************************\n");
-                            printf("\t*  N  *        X         *         F(X)        *\n");
-                            printf("\t************************************************\n");
-                            printf("\t+-----+-------------------+--------------------+\n");
                             printf("\t|%5d|%19.2lf|%20.2lf|\n", num, X1, Y);
                             printf("\t+-----+-------------------+--------------------+\n");
-                            for(num=2; num<=N; num++)
-                                {
-                                    X1 = X1 + delta;
-                                    delta = (X2 - X1)/(N-1);
-                                    Y = 2*cos(X1) + sqrt(pow(X1, power));
-                                    printf("\t|%5d|%19.2lf|%20.2lf|\n", num, X1, Y);
-                                    printf("\t+-----+-------------------+--------------------+\n");
-                                    if (num%8 == 1)
-                                        {
-                                            printf("\t");
-                                            printf("Press enter to continue table:\r");
-                                            getch();
-                                        }
-                                }
-                        }
+                                if (num%8 == 1)
+                                    {
+                                        printf("\t");
+                                        printf("Press enter to continue table:\r");
+                                        getch();
+                                    }
+                         }   
                 }
             if(variant == 2)
                 {
@@ -83,8 +82,6 @@ int main()
                             N = ( (X2-X1) / delta ) - 1;
                             printf("\nNumber of points in the table: %hhu", N);
                         } while(X1 >= X2 );
-                    for(X1;X1<X2;X1+delta)
-                        {
                             system("cls");
                             Y = 2*cos(X1) + sqrt(pow(X1, power));
                             printf("\t    X1=%.2lf       X2=%.2lf       N=%i\n", X1, X2, N);
@@ -108,6 +105,5 @@ int main()
                                         }
                                 }
                         }
-              }
     return 0;
   }
